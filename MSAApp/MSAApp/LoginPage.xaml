@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#2196f3"
+             Padding="0, 20, 0, 0"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MSAApp.LoginPage">
+  <StackLayout
+               VerticalOptions="Center"
+               HorizontalOptions="Center">
+    <Label Text="Welcome to App" FontSize="30" FontAttributes="Bold" TextColor="White"/>
+    <Label Text="Please register or log in to proceed" FontSize="18" TextColor="White"/>
+    <Entry Placeholder="Email" Keyboard="Email" x:Name="email" TextColor="White"/>
+    <Entry Placeholder="Name" Keyboard="Text" x:Name="name" TextColor="White"/>
+    <Entry Placeholder="Password" IsPassword="true" x:Name="password" TextColor="White"/>
+    <Label x:Name="message" TextColor="White"/>
+    <Button Text="Login" BackgroundColor="#44bcf6" HorizontalOptions="Fill" TextColor="White" x:Name="login"/>
+    <Button Text="Back to Login" BackgroundColor="#44bcf6" HorizontalOptions="Fill" TextColor="White" x:Name="back"/>
+    <Button Text="Register" BackgroundColor="#44bcf6" HorizontalOptions="Fill" TextColor="White" x:Name="register1"/>
+    <Button Text="Register" BackgroundColor="#44bcf6" HorizontalOptions="Fill" TextColor="White" x:Name="register2"/>
+  </StackLayout>
+</ContentPage>

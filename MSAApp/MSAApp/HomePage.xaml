@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage BackgroundColor="#2196f3"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MSAApp.HomePage">
+  <StackLayout>
+    <Button x:Name="test" Text="Click me" BackgroundColor="#44bcf6" TextColor="White"/>
+    <Label FontSize="20" TextColor="White"  HorizontalTextAlignment="Center"/>
+    <ListView  x:Name="listView" RowHeight="120">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout BackgroundColor="#217ff3"
+            Orientation="Vertical">
+              <StackLayout Orientation="Horizontal" LayoutOptions="FillAndExpand">
+                <Image Source="sunrise.jpg" LayoutOptions="Center"/>
+                <Label Text="Label 1"
+                TextColor="#f35e20" />
+                <Label Text="Label 2"
+                HorizontalOptions="EndAndExpand"
+                TextColor="#503026" />
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+              <Button Text="Save location" BackgroundColor="#44bcf6" x:Name="save" TextColor="White"/>
+    <Label x:Name="progress" FontSize="20" TextColor="White" Text="Location is saved" HorizontalTextAlignment="Center"/>
+              <Label x:Name="timeLeft" FontSize="30" TextColor="White"/>
+  </StackLayout>
+</ContentPage>
