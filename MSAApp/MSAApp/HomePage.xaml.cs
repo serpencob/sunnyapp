@@ -29,6 +29,8 @@ namespace MSAApp
             test.Clicked += GetTimes;
             save.Clicked += Save_Clicked;
             progress.IsVisible = false;
+            act.IsVisible = false;
+            savingAct.IsVisible = false;
         }
 
 
@@ -42,14 +44,16 @@ namespace MSAApp
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-
+            savingAct.IsVisible = true;
             await DatabaseHandler.DatabaseHandlerInstance.UpdateInfo(user);
 
+            savingAct.IsVisible = false;
             progress.IsVisible = true;
         }
 
         public async void GetTimes(object sender, EventArgs e)
         {
+            act.IsVisible = true;
             GetLocation();
 
             times = await TimesAPI.timesAPIinstance.RefreshDataAsync(user.lat, user.lon);
@@ -83,8 +87,8 @@ namespace MSAApp
 
             test.IsVisible = false;
             save.IsVisible = true;
+            act.IsVisible = false;
         }
-        
     }
 
     public class CustomCell : ViewCell

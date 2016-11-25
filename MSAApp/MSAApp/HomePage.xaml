@@ -5,7 +5,7 @@
              x:Class="MSAApp.HomePage">
   <StackLayout>
     <Button x:Name="test" Text="Click me" BackgroundColor="#44bcf6" TextColor="White"/>
-    <Label FontSize="20" TextColor="White"  HorizontalTextAlignment="Center"/>
+    <ActivityIndicator x:Name="act"  Color="White" IsRunning="True"/>
     <ListView  x:Name="listView" RowHeight="120">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -27,6 +27,7 @@
     </ListView>
               <Button Text="Save location" BackgroundColor="#44bcf6" x:Name="save" TextColor="White"/>
     <Label x:Name="progress" FontSize="20" TextColor="White" Text="Location is saved" HorizontalTextAlignment="Center"/>
-              <Label x:Name="timeLeft" FontSize="30" TextColor="White"/>
+    <ActivityIndicator x:Name="savingAct"  Color="White" IsRunning="True"/>
+    <Label x:Name="timeLeft" FontSize="30" TextColor="White"/>
   </StackLayout>
 </ContentPage>

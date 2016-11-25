@@ -7,12 +7,13 @@
   <StackLayout
                VerticalOptions="Center"
                HorizontalOptions="Center">
-    <Label Text="Welcome to App" FontSize="30" FontAttributes="Bold" TextColor="White"/>
-    <Label Text="Please register or log in to proceed" FontSize="18" TextColor="White"/>
+    <Label Text="Welcome to App" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="White"/>
+    <Label Text="Please register or log in to proceed" HorizontalTextAlignment="Center" FontSize="18" TextColor="White"/>
     <Entry Placeholder="Email" Keyboard="Email" x:Name="email" TextColor="White"/>
     <Entry Placeholder="Name" Keyboard="Text" x:Name="name" TextColor="White"/>
     <Entry Placeholder="Password" IsPassword="true" x:Name="password" TextColor="White"/>
-    <Label x:Name="message" TextColor="White"/>
+    <ActivityIndicator x:Name="act" Color="White" IsRunning="True"/>
+    <Label x:Name="message" TextColor="White" HorizontalTextAlignment="Center" FontSize="20"/>
     <Button Text="Login" BackgroundColor="#44bcf6" HorizontalOptions="Fill" TextColor="White" x:Name="login"/>
     <Button Text="Back to Login" BackgroundColor="#44bcf6" HorizontalOptions="Fill" TextColor="White" x:Name="back"/>
     <Button Text="Register" BackgroundColor="#44bcf6" HorizontalOptions="Fill" TextColor="White" x:Name="register1"/>

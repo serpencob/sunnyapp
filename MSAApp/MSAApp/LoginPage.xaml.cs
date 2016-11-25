@@ -23,6 +23,7 @@ namespace MSAApp
             login.Clicked += Login_Clicked;
             back.IsVisible = false;
             back.Clicked += Back_Clicked;
+            act.IsVisible = false;
         }
 
         private void Back_Clicked(object sender, EventArgs e)
@@ -32,13 +33,15 @@ namespace MSAApp
             name.IsVisible = false;
             register1.IsVisible = true;
             register2.IsVisible = false;
+            message.Text = "";
         }
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
+            act.IsVisible = true;
             if (email.Text == null || password.Text == null)
             {
-                message.Text = "Enter data";
+                message.Text = "Fill the fields";
             }
             else
             {
@@ -64,14 +67,14 @@ namespace MSAApp
 
                         //message.Text = "Hello, " + loggedName;
                     }
-                    else message.Text = "Noone like this";
+                    else message.Text = "Wrong email or password";
                 }
                 catch (Exception ex)
                 {
                     message.Text = ex.Message;
                 }
             }
-
+            act.IsVisible = false;
         }
 
         private void Register1_Clicked(object sender, EventArgs e)
@@ -81,13 +84,15 @@ namespace MSAApp
             back.IsVisible = true;
             register2.IsVisible = true;
             register1.IsVisible = false;
+            message.Text = "";
         }
 
         private async void Register2_Clicked(object sender, EventArgs e)
         {
+            act.IsVisible = true;
             if (email.Text == null || name.Text == null || password.Text == null)
             {
-                message.Text = "Enter data";
+                message.Text = "Fill the fields";
             }
             else
             {
@@ -102,13 +107,14 @@ namespace MSAApp
 
                     await DatabaseHandler.DatabaseHandlerInstance.AddUser(user);
 
-                    message.Text = "Registration successful";
+                    message.Text = "Registration successful!";
                 }
                 catch (Exception ex)
                 {
                     message.Text = ex.Message;
                 }
             }
+            act.IsVisible = false;
         }
     }
 }
